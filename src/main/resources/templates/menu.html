@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Open Restaurant Menu screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+
+<div th:if="${not #lists.isEmpty(menu)}">
+    <h2>Menu</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="s : ${menu}">
+            <td th:text="${s.dishId}"></td>
+            <td th:text="${s.name}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

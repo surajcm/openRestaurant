@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head lang="en">
+    <title>Open Restaurant New dish screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<h2>New Dish</h2>
+<div>
+    <form th:object="${dish}" th:action="@{/dish}" method="post">
+        Dish ID:<input type="text" th:field="*{dishId}"/><br/>
+        Name:<input type="text" th:field="*{name}"/><br/>
+        Description:<input type="text" th:field="*{description}"/><br/>
+        Price:<input type="text" th:field="*{price}"/><br/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

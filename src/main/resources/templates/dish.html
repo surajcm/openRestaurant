@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Open Restaurant Dish screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+
+<div th:if="${dish != null}">
+    <h2>Dish</h2>
+    <table>
+        <tr>
+            <td>Dish ID:</td>
+            <td th:text="${dish.dishId}"></td>
+        </tr>
+        <tr>
+            <td>NAME:</td>
+            <td th:text="${dish.name}"></td>
+        </tr>
+    </table>
+</div>
+<div th:if="${dish == null}">
+    <h2>Dish not found</h2>
+</div>
+</body>
+</html>
