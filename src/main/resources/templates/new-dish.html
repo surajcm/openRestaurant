@@ -8,7 +8,7 @@
 <h2>New Dish</h2>
 <div>
     <form th:object="${dish}" th:action="@{/dish}" method="post">
-        Dish ID:<input type="text" th:field="*{dishId}"/><br/>
+        <input type="hidden" th:field="*{dishId}"/><br/>
         Name:<input type="text" th:field="*{name}"/><br/>
         Description:<input type="text" th:field="*{description}"/><br/>
         Price:<input type="text" th:field="*{price}"/><br/>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Open Restaurant Menu screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+| <a th:href="@{/}">Home</a> | <a th:href="@{/invoice}">Add New Invoice</a> | <a th:href="@{/menu}">Menu</a> |
+<div th:if="${not #lists.isEmpty(invoices)}">
+    <h2>Invoices</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Table</th>
+            <th>Order</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="s : ${invoices}">
+            <td th:text="${s.invoiceId}"></td>
+            <td><a th:href="@{'/invoice/' + ${s.invoiceId}}" th:text="${s.table}"></a></td>
+            <td th:text="${s.order}"></td>
+            <td th:text="${s.price}"></td>
+        </tr>
+    </table>
+</body>
+</html>

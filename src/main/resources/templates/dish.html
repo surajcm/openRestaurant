@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 </head>
 <body>
-
+| <a th:href="@{/}">Home</a> | <a th:href="@{/dish}">Add New Dish</a> | <a th:href="@{/menu}">Menu</a> |
 <div th:if="${dish != null}">
     <h2>Dish</h2>
     <table>
@@ -16,6 +16,14 @@
         <tr>
             <td>NAME:</td>
             <td th:text="${dish.name}"></td>
+        </tr>
+        <tr>
+            <td>DESCRIPTION:</td>
+            <td th:text="${dish.description}"></td>
+        </tr>
+        <tr>
+            <td>PRICE:</td>
+            <td th:text="${dish.price}"></td>
         </tr>
     </table>
 </div>

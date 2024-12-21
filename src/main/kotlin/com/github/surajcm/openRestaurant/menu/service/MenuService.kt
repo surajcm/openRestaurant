@@ -27,6 +27,9 @@ class MenuService {
     }
 
     fun addDish(dish: Dish) {
+        // get max dishId
+        val maxDishId = menu.maxBy { it.dishId }?.dishId ?: 0
+        dish.dishId = maxDishId + 1
         (menu as MutableList).add(dish)
     }
 }

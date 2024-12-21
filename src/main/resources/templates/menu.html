@@ -5,17 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 </head>
 <body>
-
+<a th:href="@{/}">Home</a> | <a th:href="@{/dish}">Add New Dish</a>
 <div th:if="${not #lists.isEmpty(menu)}">
     <h2>Menu</h2>
     <table>
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
         </tr>
         <tr th:each="s : ${menu}">
             <td th:text="${s.dishId}"></td>
-            <td th:text="${s.name}"></td>
+            <td><a th:href="@{'/menu/' + ${s.dishId}}" th:text="${s.name}"></a></td>
+            <td th:text="${s.description}"></td>
+            <td th:text="${s.price}"></td>
         </tr>
     </table>
 </div>
