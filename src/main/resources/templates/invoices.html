@@ -11,15 +11,13 @@
     <table>
         <tr>
             <th>Id</th>
-            <th>Table</th>
-            <th>Order</th>
-            <th>Price</th>
+            <th>invoiceNumber</th>
+            <th>totalAmount</th>
         </tr>
         <tr th:each="s : ${invoices}">
             <td th:text="${s.invoiceId}"></td>
-            <td><a th:href="@{'/invoice/' + ${s.invoiceId}}" th:text="${s.table}"></a></td>
-            <td th:text="${s.order}"></td>
-            <td th:text="${s.price}"></td>
+            <td><a th:href="@{'/invoice/' + ${s.invoiceId}}" th:text="${s.invoiceNumber}"></a></td>
+            <td th:text="${s.totalAmount}"></td>
         </tr>
     </table>
 </body>
