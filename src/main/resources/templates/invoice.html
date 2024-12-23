@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Open Restaurant Invoice screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+| <a th:href="@{/}">Home</a> | <a th:href="@{/invoice}">Add New Invoice</a> | <a th:href="@{/invoices}">Invoices</a> |
+<div th:if="${invoice != null}">
+    <h2>Invoice</h2>
+    <table>
+        <tr>
+            <td>Invoice ID:</td>
+            <td th:text="${invoice.invoiceId}"></td>
+        </tr>
+        <tr>
+            <td>invoiceNumber:</td>
+            <td th:text="${invoice.invoiceNumber}"></td>
+        </tr>
+        <tr>
+            <td>TotalAmount:</td>
+            <td th:text="${invoice.totalAmount}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

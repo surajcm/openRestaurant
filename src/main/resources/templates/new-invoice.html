@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head lang="en">
+    <title>Open Restaurant New Invoice screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<h2>New Inovice</h2>
+<div>
+    <form th:object="${invoice}" th:action="@{/invoice}" method="post">
+        <input type="hidden" th:field="*{invoiceId}"/><br/>
+        INVOICE NUMBER:<input type="text" th:field="*{invoiceNumber}"/><br/>
+        TOTAL AMOUNT:<input type="text" th:field="*{totalAmount}"/><br/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

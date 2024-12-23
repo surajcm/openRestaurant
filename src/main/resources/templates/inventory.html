@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Open Restaurant Inventory screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+| <a th:href="@{/}">Home</a> | <a th:href="@{/inventory}">Add New Inventory</a> | <a th:href="@{/inventories}">Inventories</a> |
+<h2>Inventory</h2>
+<table>
+    <tr>
+        <td>Inventory Id </td>
+        <td th:text="${inventory.inventoryId}"></td>
+    </tr>
+    <tr>
+        <td>Item Name:</td>
+        <td th:text="${inventory.itemName}"></td>
+    </tr>
+    <tr>
+        <td>Quantity:</td>
+        <td th:text="${inventory.quantity}"></td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td th:text="${inventory.price}"></td>
+    </tr>
+</table>
+</body>
+</html>

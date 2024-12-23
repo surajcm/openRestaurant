@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head lang="en">
+    <title>Open Restaurant New Inventory screen</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+| <a th:href="@{/}">Home</a> | <a th:href="@{/inventory}">Add New Inventory</a> | <a th:href="@{/inventories}">Inventories</a> |
+<h2>New Inventory</h2>
+<form method="post" th:object="${inventory}" th:action="@{/inventory}">
+    <input type="hidden" th:field="*{inventoryId}"/><br/>
+    ITEM NAME:<input type="text" th:field="*{itemName}"/><br/>
+    QUANTITY:<input type="text" th:field="*{quantity}"/><br/>
+    PRICE:<input type="text" th:field="*{price}"/><br/>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

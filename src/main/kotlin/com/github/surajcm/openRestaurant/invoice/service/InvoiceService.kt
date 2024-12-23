@@ -22,4 +22,15 @@ class InvoiceService {
         return invoices
     }
 
+    fun getInvoiceById(invoiceId: Int): Invoice? {
+        return invoices.find { it.invoiceId == invoiceId }
+    }
+
+    fun addInvoice(invoice: Invoice) {
+        // get max invoiceId
+        val maxInvoiceId = invoices.maxBy { it.invoiceId }?.invoiceId ?: 0
+        invoice.invoiceId = maxInvoiceId + 1
+        invoices.add(invoice)
+    }
+
 }
